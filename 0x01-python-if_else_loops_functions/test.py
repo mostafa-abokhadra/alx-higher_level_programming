@@ -1,4 +1,3 @@
 #!/usr/bin/python3
 num = 98
-string = str(98)
-print(f"{string}")
+print(num if num > 98 else 123)
