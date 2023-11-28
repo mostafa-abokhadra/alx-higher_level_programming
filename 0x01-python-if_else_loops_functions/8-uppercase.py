@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 def uppercase(str):
-    for i in range(len(str)):
-        if ord(str[i]) >= 97 and ord(str[i]) <= 110:
-            i = ord(str[i]) + 32
-
-uppercase = __import__('8-uppercase').uppercase
-
-uppercase("best")
-uppercase("Best School 98 Battery street")
+    final = ""
+    for char in str:
+        if ord(char) >= 97 and ord(char) <= 122:
+            asci = ord(char) - 32
+            final = final + chr(asci)
+        else:
+            final = final + char
+    print(final)
