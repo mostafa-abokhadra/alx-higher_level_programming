@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "lists.h"
+#include <stdio.h>
 
 listint_t *add_empty(int number)
 {
@@ -28,8 +29,8 @@ listint_t *insert_node(listint_t **head, int number)
 		listint_t *temp = *(head);
 		listint_t *node;
 
-		if (!head)
-			return (add_empty(number));
+		if (!temp)
+			return (*head = add_empty(number));
 		else if (temp->n >= number)
 			return (*(head) = add_front(head, number));
 		while(temp->next->n <= number && temp->next != NULL)
