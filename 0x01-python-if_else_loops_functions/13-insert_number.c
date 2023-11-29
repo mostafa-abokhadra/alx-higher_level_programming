@@ -1,52 +1,44 @@
-#include "lists.h"
 #include <stdlib.h>
-#include <stddef.h>
-listint_t *add(int number)
-{
-		listint_t *new_node = malloc(sizeof(listint_t));
-		
-		if(!new_node)
-			return (NULL);
-		new_node->n = number;
-		new_node->next = NULL;
-		return (new_node);
-}
-listint_t *check_first(listint_t **head, int number)
-{
-		listint_t *new_node = malloc(sizeof(listint_t));
-		listint_t *temp = *(head);
+#include "lists.h"
 
-		if (!new_node)
+listint_t *add_empty(int number)
+{
+		listint_t *node = malloc(sizeof(listint_t));
+		
+		if (!node)
 			return (NULL);
-		new_node->n = number;
-		if (number >= temp->n)
-		{
-			new_node->next = NULL;
-			temp->next = new_node;
-		}
-		else
-		{
-			new_node->next = temp;
-			temp = new_node;
-		}
-		return (temp);
+		node->n = number;
+		node->next = NULL;
+		return (node);
 }
+listint_t *add_front(listint_t **head, int number)
+{
+		listint_t *node = malloc(sizeof(listint_t));
+
+		if (!node)
+			return (NULL);
+		node->n = number;
+		node->next = *(head);
+		*(head) = node;
+		return *(head);
+}
+
 listint_t *insert_node(listint_t **head, int number)
 {
 		listint_t *temp = *(head);
-		listint_t *new_node = NULL;
+		listint_t *node;
 
 		if (!head)
-			return add(number);
-		if (temp->next == NULL || temp->n <= number)
-			return (check_first(head, number));
-		while(temp->next->n <  number && temp->next != NULL)
+			return (*(head) = add_empty(number));
+		else if (temp->n >= number)
+			return (*(head) = add_front(head, number));
+		while(temp->next->n <= number && temp->next != NULL)
 			temp = temp->next;
-		new_node = malloc(sizeof(listint_t));
-		if (!new_node)
+		node = malloc(sizeof(listint_t));
+		if(!node)
 			return (NULL);
-		new_node->n = number;
-		new_node->next = temp->next;
-		temp->next = new_node;
-		return (new_node);
+		node->n = number;
+		node->next = temp->next;
+		temp->next = node;
+		return (node);
 }
