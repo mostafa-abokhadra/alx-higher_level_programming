@@ -8,7 +8,8 @@ if __name__ == "__main__":
     if len(sys.argv) < 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
-    if sys.argv[2] == '+' or sys.argv[2] == '-' or sys.argv[2] == '/' or sys.argv[2] == '*':
+    if sys.argv[2] == '+' or sys.argv[2] == '-' or
+        sys.argv[2] == '/' or sys.argv[2] == '*':
         state = True
     if state:
         a = int(sys.argv[1])
