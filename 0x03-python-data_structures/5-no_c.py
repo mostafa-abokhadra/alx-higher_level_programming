@@ -4,4 +4,5 @@ def no_c(my_string):
     for i in range(len(my_string)):
         if my_string[i] == 'c' or my_string[i] == 'C':
             string = my_string[:i] + my_string[i+1:]
-    return string
+    my_string = string
+    return my_string
