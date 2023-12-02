@@ -1,6 +1,5 @@
 #!/use/bin/python3
 def max_integer(my_list=[]):
-    global maxy
     if len(my_list) == 0:
         return None
     maxy = my_list[0]
