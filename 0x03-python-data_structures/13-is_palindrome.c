@@ -9,7 +9,7 @@ int is_palindrome(listint_t **head)
 		int pal = 1, size = 0;
 		int *rev = NULL;
 
-		if (!head || !((*head)->next))
+		if (!(*head) || !((*head)->next))
 			return (1);
 		while (h != NULL)
 		{
