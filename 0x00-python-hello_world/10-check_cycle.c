@@ -2,7 +2,8 @@
 #include <stdio.h>
 int check_cycle(listint_t *list)
 {
-		listint_t *temp1  __attribute__((unused)) = NULL, *temp2  __attribute__((unused))= NULL;
+	/*
+		listint_t *temp2 = NULL;
 		listint_t **arr= NULL;
 		int size = 2, i = 0, circular = 0;
 
@@ -14,7 +15,7 @@ int check_cycle(listint_t *list)
 		if (!arr)
 			return (0);
 		(*arr) = malloc(sizeof(listint_t *));
-		temp1 = temp2 = (list);
+		temp2 = (list);
 		(*arr) = list;
 		*(arr + 1) = NULL;
 
@@ -43,4 +44,15 @@ int check_cycle(listint_t *list)
 		}
 		return circular;
 
+	*/
+		listint_t *slow = list, *fast = list;
+		
+		while (slow_p && fast_p && fast_p->next)
+		{
+			slow = slow->next;
+			fast = fast->next->next;
+			if (slow == fast)
+				return (1);
+		}
+		return (0);
 }
