@@ -3,6 +3,11 @@
 int check_cycle(listint_t *list)
 {
 	/*
+	 * code before searching in google:-
+	 * all checks are correct except effeciency ones:(
+	 */
+
+	/*
 		listint_t *temp2 = NULL;
 		listint_t **arr= NULL;
 		int size = 2, i = 0, circular = 0;
@@ -45,6 +50,11 @@ int check_cycle(listint_t *list)
 		return circular;
 
 	*/
+
+	/*
+	 * cod after searching th best answer
+	 * learned about Floyd’s Cycle-Finding Algorithm
+	 */
 		listint_t *slow = list, *fast = list;
 		
 		while (slow && fast && fast->next)
