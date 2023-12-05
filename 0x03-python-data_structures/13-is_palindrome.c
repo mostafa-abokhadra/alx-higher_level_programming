@@ -5,6 +5,13 @@
 
 int is_palindrome(listint_t **head)
 {
+
+	/*
+	 * there is a better way
+	 * divide the list into two halfs and compare
+	 * first hald with the second half
+	 * be carful if tht length is odd
+	 */
 		listint_t *h = *(head);
 		int pal = 1, size = 0;
 		int *rev = NULL;
