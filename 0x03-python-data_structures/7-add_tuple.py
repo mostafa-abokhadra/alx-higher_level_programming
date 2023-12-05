@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-
-'''
-def add_tuple(tuple_a=(), tuple_b=()):
+'''def add_tuple(tuple_a=(), tuple_b=()):
     a = 0
     b = 0
     ll = []
@@ -22,8 +20,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
     a = tuple_a[0] + tuple_b[0]
     b = tuple_a[1] + tuple_b[1]
     newtup = (a, b)
-    return newtup
-    '''
+    return newtup'''
 def add_tuple(tuple_a=(), tuple_b=()):
     tuple_a += (0, 0)
     tuple_b += (0, 0)
