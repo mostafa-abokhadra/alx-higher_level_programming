@@ -13,6 +13,7 @@ def uniq_add(my_list=[]):
             if my_list[i] != my_list[j]:
                 continue
             check = False
+            break
         if check:
             res += my_list[i]
     return res
