@@ -7,5 +7,6 @@ def search_replace(my_list, search, replace):
             new_list[i] = replace
     return new_list
     """
+    # second method of sloving succeded
     new_list = [i if i != search else replace for i in my_list]
     return new_list
