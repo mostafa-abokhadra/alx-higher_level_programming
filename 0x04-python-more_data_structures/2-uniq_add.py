@@ -6,6 +6,8 @@ def uniq_add(my_list=[]):
         result += i
     return result
     """
+    if len(my_list) == 0:
+        return 0
     res = my_list[0]
     for i in range(1, len(my_list)):
         check = True
