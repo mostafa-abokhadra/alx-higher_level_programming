@@ -8,4 +8,4 @@ def roman_to_int(roman_string):
         for i in range(1, len(roman_string)):
             if roman[roman_string[i]] > roman[roman_string[i - 1]]:
                 sumy = sumy - roman[roman_string[i - 1]]
-        return sumy
+    return sumy
