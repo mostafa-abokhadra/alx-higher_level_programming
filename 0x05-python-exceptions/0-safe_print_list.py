@@ -13,4 +13,4 @@ def safe_print_list(my_list=[], x=0):
             break;
         it = it + 1
     print()
-    return (num)
+    return num
