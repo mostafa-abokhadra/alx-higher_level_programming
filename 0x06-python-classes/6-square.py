@@ -51,9 +51,11 @@ class Square:
             for j in range(0, self.__size):
                 for k in range(0, self.__position[0]):
                     print(" ", end="")
-                for l in range(0, self.__size):
+                print("#" * (self.__size))
+                """for l in range(0, self.__size):
                     print("#", end="")
                 print()
+                """
     @property
     def position(self):
         """returns: the position
