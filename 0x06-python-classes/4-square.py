@@ -4,7 +4,11 @@
 
 
 class Square:
-    """square class that add 2 methods to set and get size
+    """
+    square class that add 2 methods to set and get size
+
+    attributes:
+        size: square size
     """
     def __init__(self, size=0):
         """initializing size
@@ -16,18 +20,16 @@ class Square:
 
     @property
     def size(self):
-        """to get the size
-
-        returns: the size
+        """returns: the size
         """
         return self.__size
 
     @size.setter
     def size(self, value):
-        """set size of square
+        """property setter for size
 
         args:
-            value: new size value
+            value(int): new size value
 
         raises:
             TypeError: size must be an integer
