@@ -35,7 +35,7 @@ class Square:
         """Property setter for size.
 
         Args:
-            value (int): size of a square (1 side).
+            value: size of a squre
 
         Raises:
             TypeError: size must be an integer
