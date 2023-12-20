@@ -1,13 +1,16 @@
 #!/usr/bin/python3
 
-""" """
+"""another square class"""
 
 
 class Square:
-    """
+    """a square class concernig errors
     """
     def __inti__(self, size=0):
-        """
+        """initializing objects
+
+        args:
+            size: size of squar
         """
         if size < 0:
             raise ValueError("size must be >= 0")
