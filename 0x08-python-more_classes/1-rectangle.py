@@ -4,40 +4,40 @@
 
 
 class Rectangle:
-    """Rectangle width and height setter and getter
+    """Rectangle class
 
     Attributes:
         width: rec wid
         height: rec height
+
     """
 
     def __init__(self, width=0, height=0):
-        """ initializing width and height
+        """initializing width and height
 
-        args:
+        Args:
             width: the width
             height: the height
-        """
 
+        """
         self.width = width
         self.height = height
 
     @property
     def width(self):
         """Returns:
-            width
+                width
         """
-
         return self.__width
     
     @width.setter
     def width(self, value):
-        """ setting the width
+        """setting the width
 
-        args:
+        Args:
             value: value of setting
-        """
 
+        """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value < 0:
@@ -47,16 +47,15 @@ class Rectangle:
     @property
     def height(self):
         """ Returns:
-            the height
+                the height
         """
-
         return self.__height
 
     @height.setter
     def height(self, value):
         """ setting the height
 
-        args:
+        Args:
             value: setting value
         """
 
