@@ -4,7 +4,11 @@
 
 
 class Rectangle:
-    """rectangle width and height setter and getter
+    """Rectangle width and height setter and getter
+
+    Attributes:
+        width: rec wid
+        height: rec height
     """
 
     def __init__(self, width=0, height=0):
