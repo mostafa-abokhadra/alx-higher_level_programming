@@ -8,3 +8,4 @@ def safe_print_integer(value):
         return False
     else:
         print("{:d}".format(value))
+        return True
