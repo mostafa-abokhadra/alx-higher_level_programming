@@ -22,7 +22,6 @@ class Square:
         """
         return self.__size
 
-    @size.setter
     def set_size(self, size):
         """ setting size appropriately
 
