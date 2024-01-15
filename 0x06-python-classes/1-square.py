@@ -4,6 +4,12 @@
 
 
 class Square:
-    """ adding private size attr
+    """ class for adding private size attr
     """
-    self.__size
+    def __init__(self, size):
+        """ initializing size attr
+
+        args:
+            size: size of squar
+        """
+        self.__size = size
