@@ -1,52 +1,51 @@
 #!/usr/bin/python3
 
-""" class to add some errors """
+"""another square class"""
 
 
 class Square:
-    """ adding some features
+    """adding print method
+
+    attributes:
+        size: square size
     """
     def __init__(self, size=0):
-        """ initializing size
-
-        args:
-            size: size of square
+        """initialzing size
         """
         self.__size = size
 
     @property
     def size(self):
-        """ getting size
-
-        Return: size
+        """returns: the size
         """
         return self.__size
 
     @size.setter
     def size(self, value):
-        """ setting size appropriately
+        """setting the size of the square
 
         args:
-            size: size of square
+            value: new size
         """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
-        self.__size = value
+        else:
+            self.__size = value
 
     def area(self):
-        """ calculating the area of a square
-
-        Return: area of square
+        """returns: the area
         """
         return self.__size ** 2
 
     def my_print(self):
+        """printing to stdout the square it self using # symbol
+        """
         if self.__size == 0:
             print()
         else:
-            for i in range(0, self.__size):
-                for j in range (0, self.__size):
+            for j in range(0, self.__size):
+                for i in range(0, self.__size):
                     print("#", end="")
                 print()
