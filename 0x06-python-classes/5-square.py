@@ -41,9 +41,9 @@ class Square:
         Return: area of square
         """
         return self.__size ** 2
-
+    
     def my_print(self):
-        """ printing the suare using #
+        """printing the suare using # sympols
         """
         if self.__size == 0:
             print()
