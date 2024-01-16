@@ -4,18 +4,20 @@
 
 
 class Square:
-    """ square class, op overloading
-    """
+    """ square class, op overloading """
+
     def __init__(self, size=0):
         """ initializing size
 
         args:
             size: size of square
         """
+        """
         if not isinstance(size, int):
             raise TypeError("size must be a number")
         elif size < 0:
             raise ValueError("size must be >= 0")
+        """
         self.__size = size
         self.__area = size ** 2
 
