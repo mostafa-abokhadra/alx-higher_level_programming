@@ -10,7 +10,11 @@ class Square:
         size: square size
     """
     def __init__(self, size=0, position=(0, 0)):
-        """initialzing size
+        """initialzing size and postion
+
+        args:
+            size: the size of square
+            position: pos of sq
         """
         self.__size = size
         if not isinstance(position, tuple):
