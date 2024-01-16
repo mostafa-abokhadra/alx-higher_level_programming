@@ -55,3 +55,18 @@ class Square:
         if any(type(i) != int for i in value) or any(j < 0 for j in value):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
+
+    def __str__(self):
+        final_str = ""
+        if self.__size == 0:
+            return final_str
+        else:
+            for y in range(self.__position[1]):
+                final_str += '\n'
+            for i in range(self.__size):
+                for x in range(self.__position[0]):
+                    final_str += ' '
+                for j in range(self.__size):
+                    final_str += '#'
+                final_str += '\n'
+        return final_str
