@@ -13,6 +13,12 @@ class Square:
         """initialzing size
         """
         self.__size = size
+        if not isinstance(position, tuple):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif not len(position) == 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif not isinstance(position[0], int) or not isinstance(position[1], int):
+            raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = position
 
     @property
