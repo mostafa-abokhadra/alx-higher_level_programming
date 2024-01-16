@@ -68,5 +68,4 @@ class Square:
                     final_str += ' '
                 for j in range(self.__size):
                     final_str += '#'
-                final_str += '\n'
         return final_str
