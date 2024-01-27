@@ -2,9 +2,13 @@
 
 def matrix_divided(matrix, div):
     # not a list error 
-
-    if type(matrix) not in [list]:
+    if not isinstance(matrix, list):
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+
+    # not a list of lists error
+    for arr in matrix:
+        if not isinstance(arr, list):
+            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
 
     # empty list
     new_matrix = []
