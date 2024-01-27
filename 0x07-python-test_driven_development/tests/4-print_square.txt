@@ -1,0 +1,55 @@
+>>> print_square = __import__('4-print_square').print_square
+
+# test 1
+>>> print_square(4)
+####
+####
+####
+####
+
+# test 2
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+# test 3
+>>> print_square(1)
+#
+
+# test 4
+>>> print_square(-1)
+Traceback (most recent call last):
+ValueError: size must be >= 0
+
+# test 5
+>>> print_square(0)
+
+# test 6
+>>> print_square("messi")
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+# test 7
+>>> print_square([1, 2, 3])
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+# test 8
+>>> print_square(0.34)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+# test 9
+>>> print_square(4.7)
+####
+####
+####
+####
