@@ -11,4 +11,4 @@ def text_indentation(text):
             final_str += '\n' * 2
             idx = idx + 1
         idx = idx + 1
-    print(final_str)
+    print(final_str, end="")
