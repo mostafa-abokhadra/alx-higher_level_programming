@@ -8,7 +8,8 @@ def text_indentation(text):
     while idx < len(text):
         final_str += text[idx]
         if text[idx] == '.' or text[idx] == '?' or text[idx] == ':':
-            final_str += '\n' * 2
-            idx = idx + 1
+            final_str += "\n\n"
+            while idx < len(text) - 1 and text[idx + 1] == ' ':
+                idx = idx + 1
         idx = idx + 1
     print(final_str, end="")

@@ -7,34 +7,25 @@
 >>> text_indentation("?.:")
 ?
 <BLANKLINE>
-<BLANDLINE>
 .
 <BLANKLINE>
-<BLANKLINE>
 :
-<BLANKLINE>
 <BLANKLINE>
 
 >>> text_indentation("messi? is . the : best player?")
 messi?
 <BLANKLINE>
-<BLANKLINE>
 is .
-<BLANKLINE>
 <BLANKLINE>
 the :
 <BLANKLINE>
-<BLANKLINE>
 best player?
-<BLANKLINE>
 <BLANKLINE>
 
 >>> text_indentation(8)
 Traceback (most recent call last):
 TypeError: text must be a string
 
->>> text_indentaion("1, 2, 3, 4, 5, 6, 7, 8, 9, 10.")
+>>> text_indentation("1, 2, 3, 4, 5, 6, 7, 8, 9, 10.")
 1, 2, 3, 4, 5, 6, 7, 8, 9, 10.
 <BLANKLINE>
-<BLANKLINE>
-
