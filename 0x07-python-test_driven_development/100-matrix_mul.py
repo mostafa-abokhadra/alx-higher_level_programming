@@ -33,7 +33,28 @@ def check_canNot_multiplied(listy_1, listy_2):
     if not len(listy_1[0]) == len(listy_2):
         return True
 
-def solve(m_a, m_b):
+def solve(listy1, listy2):
+    counter, i, j, sumy = 0, 0, 0, 0
+    new_mat, new_list, final_mat = [], [], []
+    while counter < len(listy1):
+        j = 0
+        for k in range(len(listy2)):
+            for l in range(len(listy2[k])):
+                new_list.append(listy1[i][j] * listy2[k][l])
+            j += 1
+            new_mat.append(list(new_list))
+            new_list.clear()
+        for m in range(len(new_mat)):
+            for q in range(len(new_mat)):
+                sumy += new_mat[q][m]
+            new_list.append(sumy)
+            sumy = 0
+        final_mat.append(list(new_list))
+        new_mat.clear()
+        new_list.clear()
+        counter += 1
+        i += 1
+    return final_mat
 
 def matrix_mul(m_a, m_b):
 
@@ -72,4 +93,4 @@ def matrix_mul(m_a, m_b):
         raise ValueError("m_a and m_b can't be multiplied")
 
     # solve
-    solve(m_a, m_b)
+    return solve(m_a, m_b)
