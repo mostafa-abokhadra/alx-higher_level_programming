@@ -6,7 +6,7 @@ def check_list(listy):
 
 def check_list_of_lists(listy):
     for arr in listy:
-        if not isinstance(list, list):
+        if not isinstance(arr, list):
             return True
 
 def check_empty(listy):
@@ -15,7 +15,7 @@ def check_empty(listy):
 
 def check_int_float(listy):
     for arr in listy:
-        for elem in listy:
+        for elem in arr:
             if type(elem) not in [int, float]:
                 return True
 
@@ -30,8 +30,10 @@ def check_canNot_multiplied(listy_1, listy_2):
     # the number of columns in the first matrix
     # must equal the number of rows in the second matrix
 
-    if len(listy_1[0]) == len(listy_2):
+    if not len(listy_1[0]) == len(listy_2):
         return True
+
+def solve(m_a, m_b):
 
 def matrix_mul(m_a, m_b):
 
@@ -68,3 +70,6 @@ def matrix_mul(m_a, m_b):
     # 7th check
     if check_canNot_multiplied(m_a, m_b):
         raise ValueError("m_a and m_b can't be multiplied")
+
+    # solve
+    solve(m_a, m_b)
