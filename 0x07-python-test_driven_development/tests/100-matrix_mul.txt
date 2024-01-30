@@ -1,0 +1,115 @@
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+>>> listy1 = "messi"
+
+>>> listy2 = [1, 2, 3]
+
+>>> matrix_mul(listy1, listy2)
+Traceback (most recent call last):
+TypeError: m_a must be a list
+
+>>> listy1 = [1, 2, 3]
+
+>>> listy2 = "leo messi is the goat :)"
+
+>>> matrix_mul(listy1, listy2)
+Traceback (most recent call last):
+TypeError: m_b must be a list
+
+>>> listy1 = [[1, 2, 3], "leo"]
+
+>>> listy2 = [[1, 2, 3], [4, 5, 6]]
+
+>>> matrix_mul(listy1, listy2)
+Traceback (most recent call last):
+TypeError: m_a must be a list of lists
+
+>>> listy1 = [[1, 2, 3], [4, 5, 6]]
+
+>>> listy2 = [[1, 2, 3], 55, "ok"]
+
+>>> matrix_mul(listy1, listy2)
+Traceback (most recent call last):
+TypeError: m_b must be a list of lists
+
+>>> listy1 = []
+
+>>> listy2 = [[1, 2], [3, 4]]
+
+>>> matrix_mul(listy1, listy2)
+Traceback (most recent call last):
+ValueError: m_a can't be empty
+
+>>> listy1 = [[]]
+
+>>> matrix_mul(listy1, listy2)
+Traceback (most recent call last):
+ValueError: m_a can't be empty
+
+>>> listy1 = [[1, 2, 3, 4], [5, 6, 7]]
+
+>>> listy2 = []
+
+>>> matrix_mul(listy1, listy2)
+Traceback (most recent call last):
+ValueError: m_b can't be empty
+
+>>> listy2 = [[]]
+
+>>> matrix_mul(listy1, listy2)
+Traceback (most recent call last):
+ValueError: m_b can't be empty
+
+>>> listy1 = [[1, 2, 3], [4, 5, "messi"]]
+
+>>> listy2 = [[1, 2, 3], [4, 5, 6]]
+
+>>> matrix_mul(listy1, listy2)
+Traceback (most recent call last):
+TypeError: m_a should contain only integers or floats
+
+>>> listy1 = [[1, 2, 3], [3, 4, 5]]
+
+>>> listy2 = [[1, 2, 3], [44, 55, 66], [4, 5, {"leo": 10}]]
+
+>>> matrix_mul(listy1, listy2)
+Traceback (most recent call last):
+TypeError: m_b should contain only integers or floats
+
+>>> listy1 = [[1, 2, 3], [4, 5, 6], [7, 8], [9, 5, 6]]
+
+>>> listy2 = [[1, 2, 3], [4, 5, 6]]
+
+>>> matrix_mul(listy1, listy2)
+Traceback (most recent call last):
+TypeError: each row of m_a must be of the same size
+
+>>> listy2 = listy1
+
+>>> listy1 = [[1, 2, 3], [4, 5, 6]]
+
+>>> matrix_mul(listy1, listy2)
+Traceback (most recent call last):
+TypeError: each row of m_b must be of the same size
+
+>>> listy1 = [[1, 2], [3, 4]]
+
+>>> listy2 = [[1, 2]]
+
+>>> matrix_mul(listy1, listy2)
+Traceback (most recent call last):
+ValueError: m_a and m_b can't be multiplied
+
+>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+[[7, 10], [15, 22]]
+
+>>> matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+[[13, 16]]
+
+>>> listy1 = [[1, 2, 3], [4, 5, 6]]
+
+>>> listy2 = [[7, 8], [9, 10], [11, 12]]
+
+>>> matrix_mul(listy1, listy2)
+[[58, 64], [139, 154]]
+
