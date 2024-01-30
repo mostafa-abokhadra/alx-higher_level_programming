@@ -13,3 +13,7 @@ def text_indentation(text):
                 idx = idx + 1
         idx = idx + 1
     print(final_str, end="")
+
+    if __name__ == "__main__":
+        import doctest
+        doctest.testfile("tests/0-add_integer.txt")
