@@ -1,31 +1,81 @@
 #!/usr/bin/python3
+"""multiplying matrix module"""
+
 
 def check_list(listy):
+    """check if object is list
+
+        args:
+            listy: object to be checked
+
+        Returns: True if qualified
+    """
     if not isinstance(listy, list):
         return True
 
 def check_list_of_lists(listy):
+    """check if object is list of lists
+
+        args:
+            listy: object to be checked
+
+        Returns:
+            True if qualified
+    """
     for arr in listy:
         if not isinstance(arr, list):
             return True
 
 def check_empty(listy):
+    """check if object is empty list
+
+        args:
+            listy: object to be checked
+        
+        Returns:
+            True if qualified
+    """
     if not listy or not listy[0]:
         return True
 
 def check_int_float(listy):
+    """check if list contains other types than int or float
+
+        args:
+            listy: object to be checked
+
+        Returns:
+            True if qualified
+    """
     for arr in listy:
         for elem in arr:
             if type(elem) not in [int, float]:
                 return True
 
 def check_notEqual_lists(listy):
+    """check if lists in the big list equal in size
+
+        args:
+            listy: object to be checked
+
+        Returns:
+            True if qualified
+    """
     if len(listy) > 1:
         for i in range(1, len(listy)):
             if not len(listy[i]) == len(listy[0]):
                 return True
 
 def check_canNot_multiplied(listy_1, listy_2):
+    """check if matrixs can't be multiplied
+
+        args:
+            listy1: object to be checked
+            listy2: second matrix
+
+        Returns:
+            True if qualified
+    """
     # for two matrices to be multiplied
     # the number of columns in the first matrix
     # must equal the number of rows in the second matrix
@@ -34,6 +84,15 @@ def check_canNot_multiplied(listy_1, listy_2):
         return True
 
 def solve(listy1, listy2):
+    """multiplying two matrix
+
+        args:
+            listy1: 1st mat
+            listy2: 2nd mat
+
+        Returns:
+            final matrix
+    """
     counter, i, j, sumy = 0, 0, 0, 0
     new_mat, new_list, final_mat = [], [], []
     while counter < len(listy1):
@@ -57,7 +116,15 @@ def solve(listy1, listy2):
     return final_mat
 
 def matrix_mul(m_a, m_b):
+    """starting point of the program
 
+        args:
+            m_a: first mat
+            m_b: second mat
+
+        Returns:
+            final matrix
+    """
     # 1st check
     if check_list(m_a):
         raise TypeError("m_a must be a list")

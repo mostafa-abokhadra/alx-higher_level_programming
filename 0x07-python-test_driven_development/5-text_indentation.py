@@ -1,6 +1,13 @@
 #!/usr/bin/python3
+"""text indentation module"""
+
 
 def text_indentation(text):
+    """formating text based on delimiters
+
+        args:
+            text: text needed to be formated
+    """
     final_str = ""
     idx = 0
     if not isinstance(text, str):

@@ -1,6 +1,13 @@
 #!/usr/bin/python3
+"""print square module"""
+
 
 def print_square(size):
+    """printing a square of # symbol
+
+        args:
+            size: square size
+    """
     if type(size) not in [int, float]:
         raise TypeError("size must be an integer")
     if size < 0:

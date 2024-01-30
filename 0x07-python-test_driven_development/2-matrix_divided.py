@@ -1,6 +1,18 @@
 #!usr/bin/python3
+"""matrix division module"""
+
 
 def matrix_divided(matrix, div):
+    """dividing matrix elements by div
+
+        args:
+            matrix: list of lists of nums
+            div: number to divide upon
+
+        Returns:
+            resulted new_matrix after division
+    """
+
     # not a list error 
     if not isinstance(matrix, list):
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
