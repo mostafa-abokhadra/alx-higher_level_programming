@@ -44,7 +44,7 @@ def solve(listy1, listy2):
             j += 1
             new_mat.append(list(new_list))
             new_list.clear()
-        for m in range(len(new_mat)):
+        for m in range(len(new_mat[0])):
             for q in range(len(new_mat)):
                 sumy += new_mat[q][m]
             new_list.append(sumy)
