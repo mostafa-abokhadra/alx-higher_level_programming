@@ -24,6 +24,8 @@ def say_my_name(first_name, last_name=""):
     print("My name is {}".format(first_name), end="")
     if last_name:
         print(" {}".format(last_name))
+    else:
+        print()
 
     if __name__ == "__main__":
         import doctest
