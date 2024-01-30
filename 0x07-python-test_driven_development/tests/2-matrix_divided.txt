@@ -93,3 +93,6 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 Traceback (most recent call last):
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
+>>> matrix_divided([[100]], 5)
+[[20.0]]
+
