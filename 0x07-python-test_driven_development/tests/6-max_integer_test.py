@@ -16,6 +16,10 @@ class TestMaxInteger(unittest.TestCase):
         self.assertAlmostEqual(max_integer([-1, -2, -3, 0, -4]), 0)
         self.assertAlmostEqual(max_integer([845]), 845)
 
+    def test_str(self):
+        """testing strings"""
+        self.assertAlmostEqual(max_integer(['a', 'b', 'c']), 'c')
+
     def test_empty(self):
         """testing empty list"""
         self.assertAlmostEqual(max_integer([]), None)
