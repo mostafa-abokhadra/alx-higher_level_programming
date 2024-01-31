@@ -1,0 +1,59 @@
+#!/usr/bin/python3
+"""rectangle class #1"""
+
+
+class Rectangle:
+    """rectangle class
+    """
+    def __init__(self, width=0, height=0):
+        """initializing width and height
+
+        args:
+            width: width of rec
+            height: height of rec
+        """
+        self.width = width
+        self.height = height
+
+    @property
+    def width(self):
+        """
+        Returns:
+            rec_width
+        """
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        """setting width
+
+        args:
+            value: width of rec
+        """
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = value
+
+    @property
+    def height(self):
+        """
+        Returns:
+            rec_height
+        """
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        """setting height
+
+        args:
+            value: height of rec
+        """
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = value
+
