@@ -75,4 +75,7 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
+        """return statement is equal to return Rectangle(size, size)
+        as cls is reference to the class itself we can use it also
+        """
         return cls(size, size)
