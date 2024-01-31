@@ -51,5 +51,6 @@ class Rectangle:
         for i in range(self.height):
             for j in range(self.width):
                 stringy += '#'
-            stringy += '\n'
+            if i < self.height - 1:
+                stringy += '\n'
         return stringy
