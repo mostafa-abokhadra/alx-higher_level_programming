@@ -36,3 +36,15 @@ TypeError: b must be an integer
 >>> add_integer()
 Traceback (most recent call last):
 TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Float overflow:
+
+>>> add_integer(1500.5)
+1598
+
+Float NaN:
+
+>>> add_integer(float('NaN'))
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
