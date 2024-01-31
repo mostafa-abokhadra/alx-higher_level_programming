@@ -3,5 +3,6 @@
 
 
 class Rectangle:
-    """rectangle class definition"""
+    """rectangle class definition
+    """
     pass
