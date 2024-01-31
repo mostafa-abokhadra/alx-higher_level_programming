@@ -76,13 +76,3 @@ class Rectangle:
     def __del__(self):
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
-
-    def __eq__(self, inst):
-        if self.area == inst.area:
-            return True
-
-    def __gt__(self, inst):
-        if self.area() > inst.area():
-            return True
-        else:
-            return False
