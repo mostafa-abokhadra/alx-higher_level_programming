@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""rectangle class #1"""
+"""rectangle class 1"""
 
 
 class Rectangle:
@@ -19,7 +19,7 @@ class Rectangle:
     def width(self):
         """
         Returns:
-            rec_width
+            self.width
         """
         return self.__width
 
@@ -40,7 +40,7 @@ class Rectangle:
     def height(self):
         """
         Returns:
-            rec_height
+            self.height
         """
         return self.__height
 
