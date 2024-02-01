@@ -6,14 +6,17 @@ def check_list(listy):
     if not isinstance(listy, list):
         return True
 
+
 def check_list_of_lists(listy):
     for arr in listy:
         if not isinstance(arr, list):
             return True
 
+
 def check_empty(listy):
     if not listy or not listy[0]:
         return True
+
 
 def check_int_float(listy):
     for arr in listy:
@@ -21,11 +24,13 @@ def check_int_float(listy):
             if type(elem) not in [int, float]:
                 return True
 
+
 def check_notEqual_lists(listy):
     if len(listy) > 1:
         for i in range(1, len(listy)):
             if not len(listy[i]) == len(listy[0]):
                 return True
+
 
 def check_canNot_multiplied(listy_1, listy_2):
     """for two matrices to be multiplied
@@ -34,6 +39,7 @@ def check_canNot_multiplied(listy_1, listy_2):
     """
     if not len(listy_1[0]) == len(listy_2):
         return True
+
 
 def solve(listy1, listy2):
     counter, i, j, sumy = 0, 0, 0, 0
@@ -57,6 +63,7 @@ def solve(listy1, listy2):
         counter += 1
         i += 1
     return final_mat
+
 
 def matrix_mul(m_a, m_b):
     """starting point of the program
