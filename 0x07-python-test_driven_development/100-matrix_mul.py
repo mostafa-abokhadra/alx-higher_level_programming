@@ -44,6 +44,7 @@ def check_canNot_multiplied(listy_1, listy_2):
 def solve(listy1, listy2):
     counter, i, j, sumy = 0, 0, 0, 0
     new_mat, new_list, final_mat = [], [], []
+
     while counter < len(listy1):
         j = 0
         for k in range(len(listy2)):
@@ -67,40 +68,34 @@ def solve(listy1, listy2):
 
 def matrix_mul(m_a, m_b):
     """starting point of the program
+    
+    args:
+        m_a: first mat
+        m_b: second mat
 
-        args:
-            m_a: first mat
-            m_b: second mat
-
-        Returns:
-            final matrix
+    Returns:
+        final matrix
     """
     if check_list(m_a):
         raise TypeError("m_a must be a list")
     if check_list(m_b):
         raise TypeError("m_b must be a list")
-
     if check_list_of_lists(m_a):
         raise TypeError("m_a must be a list of lists")
     if check_list_of_lists(m_b):
         raise TypeError("m_b must be a list of lists")
-
     if check_empty(m_a):
         raise ValueError("m_a can't be empty")
     if check_empty(m_b):
         raise ValueError("m_b can't be empty")
-
     if check_int_float(m_a):
         raise TypeError("m_a should contain only integers or floats")
     if check_int_float(m_b):
         raise TypeError("m_b should contain only integers or floats")
-
     if check_notEqual_lists(m_a):
         raise TypeError("each row of m_a must be of the same size")
     if check_notEqual_lists(m_b):
         raise TypeError("each row of m_b must be of the same size")
-
     if check_canNot_multiplied(m_a, m_b):
         raise ValueError("m_a and m_b can't be multiplied")
-    
     return solve(m_a, m_b)
