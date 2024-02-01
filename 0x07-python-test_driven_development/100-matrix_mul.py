@@ -68,39 +68,32 @@ def matrix_mul(m_a, m_b):
         Returns:
             final matrix
     """
-    # 1st check
     if check_list(m_a):
         raise TypeError("m_a must be a list")
     if check_list(m_b):
         raise TypeError("m_b must be a list")
 
-    # 2nd check
     if check_list_of_lists(m_a):
         raise TypeError("m_a must be a list of lists")
     if check_list_of_lists(m_b):
         raise TypeError("m_b must be a list of lists")
 
-    # 3rd check
     if check_empty(m_a):
         raise ValueError("m_a can't be empty")
     if check_empty(m_b):
         raise ValueError("m_b can't be empty")
 
-    # 4th check
     if check_int_float(m_a):
         raise TypeError("m_a should contain only integers or floats")
     if check_int_float(m_b):
         raise TypeError("m_b should contain only integers or floats")
 
-    # 6th check
     if check_notEqual_lists(m_a):
         raise TypeError("each row of m_a must be of the same size")
     if check_notEqual_lists(m_b):
         raise TypeError("each row of m_b must be of the same size")
 
-    # 7th check
     if check_canNot_multiplied(m_a, m_b):
         raise ValueError("m_a and m_b can't be multiplied")
-
-    # solve
+    
     return solve(m_a, m_b)
