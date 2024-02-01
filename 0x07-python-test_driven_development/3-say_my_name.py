@@ -21,11 +21,7 @@ def say_my_name(first_name, last_name=""):
     for char in last_name:
         if not char.isalpha():
             raise TypeError("last_name must be a string")
-    print("My name is {}".format(first_name), end="")
-    if last_name:
-        print(" {}".format(last_name))
-    else:
-        print('\n')
+    print("My name is {} {}".format(first_name, last_name))
 
     if __name__ == "__main__":
         import doctest
