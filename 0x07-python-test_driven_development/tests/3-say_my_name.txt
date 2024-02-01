@@ -9,7 +9,6 @@ My name is moastafa abokhadra
 
 >>> say_my_name("mostafa", "")
 My name is mostafa
-<BLANKlINE>
 
 >>> say_my_name("", "abokhadra")
 Traceback (most recent call last):
