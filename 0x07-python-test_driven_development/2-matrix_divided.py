@@ -53,3 +53,8 @@ def matrix_divided(matrix, div):
         new_matrix.append(list(listy))
         listy.clear()
     return new_matrix
+
+"""
+    easier way:
+    new_matrix = [[round(x / div, 2) for x in row] for row in matrix]
+"""
