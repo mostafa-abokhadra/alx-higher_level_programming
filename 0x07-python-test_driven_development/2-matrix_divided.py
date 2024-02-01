@@ -12,8 +12,7 @@ def matrix_divided(matrix, div):
         Returns:
             resulted new_matrix after division
     """
-
-    # not a list error 
+    # not a list error
     if not isinstance(matrix, list):
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
 
@@ -43,7 +42,7 @@ def matrix_divided(matrix, div):
     if type(div) not in [int, float]:
         raise TypeError("div must be a number")
 
-    # if div equals to zeor
+    # if div equals to zero
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
