@@ -17,8 +17,6 @@ class BaseGeometry:
             name: value key
             value: value of key
         """
-        if type(name) is not str:
-            raise TypeError("name must be a string")
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
