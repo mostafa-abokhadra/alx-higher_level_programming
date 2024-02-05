@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ square module """
-Rectangle = __import__('9-rectangle').Rectangle
 
+Rectangle = __import__('9-rectangle').Rectangle
 
 class Square(Rectangle):
     """Square class that inherits from Rectangle that inherits BaseGeometry"""
