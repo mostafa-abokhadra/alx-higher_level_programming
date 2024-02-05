@@ -1,22 +1,16 @@
 #!/usr/bin/python3
-""" module of gometry """
+"""BaseGeometry class Module"""
 
 
 class BaseGeometry():
-    """ class that not define an area :) """
+    """BaseGeometry class"""
     def area(self):
-        """raising an exception of not defined area
-        """
+        """Method Raises an Exception"""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """integer validate
-
-        args:
-            name: value key
-            value: value of key
-        """
-        if type(value) is not int:
+        """Method for validating value"""
+        if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
