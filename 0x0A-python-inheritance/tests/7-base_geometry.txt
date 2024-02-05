@@ -27,3 +27,13 @@ ValueError: leo must be greater than 0
 >>> new.area()
 Traceback (most recent call last):
 Exception: area() is not implemented
+
+>>> new.integer_validator("messi", 1, 0)
+Traceback (most recent call last):
+TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
+
+>>> new.integer_validator("leo_messi", int('inf'))
+Traceback (most recent call last):
+ValueError: invalid literal for int() with base 10: 'inf'
+
+>>> new.integer_validator("num", 12)
