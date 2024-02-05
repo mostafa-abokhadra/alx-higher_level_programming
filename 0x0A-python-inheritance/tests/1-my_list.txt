@@ -2,6 +2,14 @@
 
 >>> new = MyList()
 
+>>> new.append("messi")
+
+>>> new.print_sorted()
+Traceback (most recent call last):
+ValueError: only integers allowed
+
+>>> new.clear()
+
 >>> new.print_sorted()
 []
 
@@ -23,11 +31,3 @@
 >>> new.print_sorted()
 [-7, -1, 0, 2, 3, 99]
 
->>> new.clear()
-
->>> new.append(6.5)
->>> new.append(4.5)
->>> new.append(6.4)
-
->>> new.print_sorted()
-[4.5, 6.4, 6.5]
