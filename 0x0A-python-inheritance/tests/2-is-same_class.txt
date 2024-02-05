@@ -1,0 +1,28 @@
+>>> is_same_class = __import__('2-is_same_class').is_same_class
+
+>>> var = 5
+
+>>> is_same_class(var, int)
+True
+
+>>> is_same_class(var, object)
+False
+
+>>> is_same_class(var, str)
+False
+
+>>> var = True
+
+>>> is_same_class(var, int)
+False
+
+>>> is_same_class(var, bool)
+True
+
+>>> var = "messi"
+
+>>> is_same_class(var, str)
+True
+
+>>> is_same_class(var, object)
+False
