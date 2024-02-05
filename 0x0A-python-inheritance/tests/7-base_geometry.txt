@@ -1,0 +1,29 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> new = BaseGeometry()
+
+>>> new.integer_validator()
+Traceback (most recent call last):
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> new.integer_validator("messi")
+Traceback (most recent call last):
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+>>> new.integer_validator(1, 4)
+Traceback (most recent call last):
+TypeError: name must be a string
+
+>>> new.integer_validator("leo","messi")
+Traceback (most recent call last):
+TypeError: leo must be an integer
+
+>>> new.integer_validator("leo", 10)
+
+>>> new.integer_validator("leo", 0)
+Traceback (most recent call last):
+ValueError: leo must be greater than 0
+
+>>> new.integer_validator("leo", -2)
+Traceback (most recent call last):
+ValueError: leo must be greater than 0
