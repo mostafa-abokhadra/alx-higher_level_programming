@@ -1,0 +1,39 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> new = BaseGeometry()
+
+>>> new.integer_validator()
+Traceback (most recent call last):
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> new.integer_validator("messi")
+Traceback (most recent call last):
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+>>> new.integer_validator("leo","messi")
+Traceback (most recent call last):
+TypeError: leo must be an integer
+
+>>> new.integer_validator("leo", 10)
+
+>>> new.integer_validator("leo", 0)
+Traceback (most recent call last):
+ValueError: leo must be greater than 0
+
+>>> new.integer_validator("leo", -2)
+Traceback (most recent call last):
+ValueError: leo must be greater than 0
+
+>>> new.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+>>> new.integer_validator("messi", 1, 0)
+Traceback (most recent call last):
+TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
+
+>>> new.integer_validator("leo_messi", int('inf'))
+Traceback (most recent call last):
+ValueError: invalid literal for int() with base 10: 'inf'
+
+>>> new.integer_validator("num", 12)
