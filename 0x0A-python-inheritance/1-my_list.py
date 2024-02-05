@@ -9,4 +9,5 @@ class MyList(list):
         """initailization of variables
         """
     def print_sorted(self):
+        """printing a sorted list """
         print(sorted(self))
