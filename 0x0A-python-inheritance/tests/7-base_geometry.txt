@@ -27,3 +27,7 @@ ValueError: leo must be greater than 0
 >>> new.integer_validator("leo", -2)
 Traceback (most recent call last):
 ValueError: leo must be greater than 0
+
+>>> new.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
