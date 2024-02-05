@@ -9,6 +9,7 @@ class MyInt(int):
         if type(value) is not int:
             raise TypeError("must be integer")
         self.__num = value
+
     def __eq__(self, value):
         """overloading =="""
         if self.__num == value:
