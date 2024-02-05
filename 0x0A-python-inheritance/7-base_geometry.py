@@ -2,13 +2,12 @@
 """ module of gometry """
 
 
-class BaseGeometry:
+class BaseGeometry():
     """ class that not define an area :) """
     def area(self):
         """raising an exception of not defined area
         """
         raise Exception("area() is not implemented")
-
 
     def integer_validator(self, name, value):
         """integer validate
