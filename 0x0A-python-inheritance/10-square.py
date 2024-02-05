@@ -5,16 +5,16 @@ Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    """Square class that inherits from Rectangle that inherits BaseGeometry"""
+    """Square that inherits from Rectangle"""
 
     def __init__(self, size):
-        """Method for initialized the attrubutes"""
+        """initialize the size"""
 
         self.integer_validator("size", size)
         super().__init__(size, size)
         self.__size = size
 
     def area(self):
-        """rectangle area"""
+        """square area"""
 
         return self.__size ** 2
