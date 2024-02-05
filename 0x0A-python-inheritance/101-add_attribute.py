@@ -9,6 +9,6 @@ def add_attribute(obj, name, value):
         name: name of it
         value: value of it
     """
-    if type(obj).__class__.__module__ == '__builtin':
+    if not hasattr(obj, '__dict__')
         raise TypeError("can't add new attribute")
-    obj.name = value
+    setattr(obj, name, value)
