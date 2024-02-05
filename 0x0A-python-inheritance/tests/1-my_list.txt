@@ -22,3 +22,12 @@
 
 >>> new.print_sorted()
 [-7, -1, 0, 2, 3, 99]
+
+>>> new.clear()
+
+>>> new.append(6.5)
+>>> new.append(4.5)
+>>> new.append(6.4)
+
+>>> new.print_sorted()
+[4.5, 6.4, 6.5]
