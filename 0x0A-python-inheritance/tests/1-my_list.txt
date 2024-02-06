@@ -30,4 +30,3 @@ ValueError: only integers allowed
 
 >>> new.print_sorted()
 [-7, -1, 0, 2, 3, 99]
-
