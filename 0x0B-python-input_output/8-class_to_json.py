@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """class to json module"""
-import json
 
 
 def class_to_json(obj):
@@ -9,4 +8,4 @@ def class_to_json(obj):
     args:
         obj: object to convert
     """
-    return json.dumps(obj.__dict__)
+    return dict(obj.__dict__)
