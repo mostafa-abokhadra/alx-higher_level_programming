@@ -8,4 +8,4 @@ def class_to_json(obj):
     args:
         obj: object to convert
     """
-    return dict(obj.__dict__)
+    return obj.__dict__
