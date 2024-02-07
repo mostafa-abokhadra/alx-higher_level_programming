@@ -10,6 +10,6 @@ def save_to_json_file(my_obj, filename):
         my_obj: object to be written
         filename: name of file
     """
-    with open(filename, mode='w', encoding='utf-8') as fily:
+    with open(filename, mode='a', encoding='utf-8') as fily:
         """fily.write(json.dumps(my_obj))"""
         json.dump(my_obj, fily)
