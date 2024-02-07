@@ -36,4 +36,5 @@ class Student:
         args:
             json: a dictionary
         """
-        self.__dict__ = json
+        for k, v in json.items():
+            setattr(self, k, v)

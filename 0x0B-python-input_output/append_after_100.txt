@@ -1,0 +1,7 @@
+At Holberton School,
+Python is really important,
+"C is fun!"
+f:
+- You don't get all Pythonic tricks
+- You don't have strong C knowledge.
+"C is fun!"
