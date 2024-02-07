@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """load add and save module"""
-import json
 import sys
 import os
 
