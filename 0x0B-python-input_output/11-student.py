@@ -36,7 +36,4 @@ class Student:
         args:
             json: a dictionary
         """
-        if len(json) == 0:
-            self.__dict__ = {}
-        else:
-            self.__dict__ = json
+        self.__dict__ = json
