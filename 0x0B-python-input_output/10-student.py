@@ -18,7 +18,11 @@ class Student:
 
     
     def to_json(self, attrs=None):
-        """retrieves dictionary of an object"""
+        """retrieves dictionary of an object
+
+        args:
+            attrs: list of strings
+        """
         final_dic = {}
         if type(attrs) is not list:
             return self.__dict__
