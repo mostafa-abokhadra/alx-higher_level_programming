@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-"""student class module"""
+"""class module of student"""
 
 
 class Student:
     """student class"""
     def __init__(self, first_name, last_name, age):
-        """initializing attributes
+        """initializing attrs
 
         args:
-            first_name: first name
+            first_name: 1st name
             last_name: last name
             age: age
         """
@@ -16,12 +16,12 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    
+
     def to_json(self, attrs=None):
-        """retrieves dictionary of an object
+        """to json function
 
         args:
-            attrs: list of strings
+            attrs: list of string
         """
         final_dic = {}
         if type(attrs) is not list:
