@@ -37,4 +37,3 @@ class Student:
             json: a dictionary
         """
         self.__dict__ = json
-
