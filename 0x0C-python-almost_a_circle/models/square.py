@@ -8,6 +8,8 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
         self.size = size
+        self.dict = {"id": self.id, "size": self.size,
+                "x": self.x, "y": self.y}
 
     def __str__(self):
         return "[Square] ({}) {}/{} - {}".format(
@@ -32,3 +34,6 @@ class Square(Rectangle):
         else:
             for key in kwargs:
                 setattr(self, key, kwargs[key])
+
+    def to_dictionary(self):
+        return self.dict

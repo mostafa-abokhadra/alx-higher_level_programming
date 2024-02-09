@@ -12,6 +12,8 @@ class Rectangle(Base):
         self.x = x
         self.y = y
         super().__init__(id)
+        self.dict = {"id": self.id, "width": self.width,
+                "height": self.height, "x": self.x, "y": self.y}
 
     def errors(self, name, value):
         if type(value) is not int:
@@ -84,4 +86,4 @@ class Rectangle(Base):
                 self.id,self.x, self.y, self.width, self.height)
 
     def to_dictionary(self):
-        return self.__dict__
+        return self.dict
