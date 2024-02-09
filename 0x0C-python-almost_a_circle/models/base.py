@@ -32,3 +32,9 @@ class Base:
                 fily.write("]")
             else:
                 fily.write("[]")
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string:
+            return json.loads(json_string)
+
