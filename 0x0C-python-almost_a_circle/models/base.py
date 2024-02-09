@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 import json
 
-
 class Base:
     __nb_objects = 0
     def __init__(self, id=None):
@@ -17,3 +16,19 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        name = list_objs[0].__class__.__name__
+        name += ".json"
+        with open(name, mode='w', encoding="utf-8") as fily:
+            if list_objs:
+                fily.write("[")
+                for inst in list_objs:
+                    dicty = inst.to_dictionary()
+                    fily.write(cls.to_json_string(dicty))
+                    if inst != list_objs[-1]:
+                        fily.write(", ")
+                fily.write("]")
+            else:
+                fily.write("[]")
