@@ -12,13 +12,22 @@ class Rectangle(Base):
         self.x = x
         self.y = y
         super().__init__(id)
-    
+
+    def errors(self, name, value):
+        if type(value) is not int:
+            raise TypeError("{} must be an integer".format(name))
+        if value <= 0 and (name == "width" or name == "height"):
+            raise ValueError("{} must be > 0".format(name))
+        if value < 0 and (name == "x" or name == "y"):
+            raise ValueError("{} must be >= 0".format(name))
+
     @property
     def width(self):
         return self.__width
 
     @width.setter
     def width(self, width):
+        Rectangle.errors(self, "width", width)
         self.__width = width
 
     @property
@@ -27,6 +36,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, height):
+        Rectangle.errors(self, "height", height)
         self.__height = height
 
     @property
@@ -35,6 +45,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, x):
+        Rectangle.errors(self, "x", x)
         self.__x = x
 
     @property
@@ -43,4 +54,33 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, y):
+        Rectangle.errors(self,"y", y)
         self.__y = y
+
+    def area(self):
+        return self.width * self.height
+
+    def display(self):
+        for i in range(self.y):
+            print()
+        for i in range(self.height):
+            for l in range(self.x):
+                print(' ', end="")
+            for j in range(self.width):
+                print("#", end="")
+            print()
+
+    def update(self, *args, **kwargs):
+        if args:
+            attrs = ["id", "width", "height", "x", "y"]
+            for i in range(len(args)):
+                setattr(self, attrs[i], args[i])
+        else:
+            for key in kwargs:
+                setattr(self, key, kwargs[key])
+
+    def __str__(self):
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+                self.id,self.x, self.y, self.width, self.height)
+
+
