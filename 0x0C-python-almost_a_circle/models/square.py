@@ -5,6 +5,7 @@ from models.rectangle import Rectangle
 
 class Square(Rectangle):
     """sqaur class that inherits from rectangle"""
+    attrs = ["id", "size", "x", "y"]
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
         self.size = size
@@ -27,7 +28,6 @@ class Square(Rectangle):
         self.__size = size
 
     def update(self, *args, **kwargs):
-        attrs = ["id", "size", "x", "y"]
         if args:
             for i in range(len(args)):
                 setattr(self, attrs[i], args[i])

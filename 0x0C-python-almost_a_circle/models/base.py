@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import json
 import os
+import csv
 
 
 class Base:
@@ -16,13 +17,12 @@ class Base:
     def to_json_string(list_dictionaries):
         if not list_dictionaries:
             return "[]"
-        else:
+        else:   
             return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        name = list_objs[0].__class__.__name__
-        name += ".json"
+        name = cls.__class__.__name__ + ".json"
         with open(name, mode='w', encoding="utf-8") as fily:
             if list_objs:
                 fily.write("[")
@@ -61,3 +61,31 @@ class Base:
             for i in range(len(listy)):
                 listy2.append(cls.create(**listy[i]))
         return listy2
+
+    @classmethod
+    def to_csv(cls, dictionary):
+        csvalue = [dictionary[key] for key in dictionary]
+        return csvalue
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        filename = cls.__name__ + '.csv'
+        with open(filename, mode="w") as file:
+            obj = csv.writer(file)
+            for inst in list_objs:
+                obj.writerow(cls.to_csv(inst.to_dictionary()))
+
+    @classmethod
+    def load_from_file_csv(cls):
+        filename = cls.__name__ + '.csv'
+        with open(filename, mode="r", encoding="utf-8") as file:
+            obj = csv.reader(file)
+            listy = list(obj)
+            dictionary = {}
+            final_list = []
+            for each_list in listy:
+                for i in range(len(each_list)):
+                    dictionary[cls.attrs[i]] = int(each_list[i])
+                final_list.append(cls.create(**dictionary))
+                dictionary.clear()
+            return final_list
