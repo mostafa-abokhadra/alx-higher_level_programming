@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 import json
+import os
+
 
 class Base:
     __nb_objects = 0
@@ -47,3 +49,15 @@ class Base:
         dummy.update(**dictionary)
         return dummy
 
+    @classmethod
+    def load_from_file(cls):
+        listy2 = []
+        filename = cls.__name__ + ".json"
+        if os.path.exists(filename):
+            with open(filename, mode='r', encoding='utf-8') as fily:
+                file = fily.read()
+            listy = cls.from_json_string(file)
+            listy2 = []
+            for i in range(len(listy)):
+                listy2.append(cls.create(**listy[i]))
+        return listy2
