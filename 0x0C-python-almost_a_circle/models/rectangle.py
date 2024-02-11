@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """rectangle module"""
 from models.base import Base
+"""super class import"""
 
 
 class Rectangle(Base):
@@ -13,57 +14,101 @@ class Rectangle(Base):
         self.x = x
         self.y = y
         super().__init__(id)
-        self.dict = {"id": self.id, "width": self.width,
-                "height": self.height, "x": self.x, "y": self.y}
-
-    def errors(self, name, value):
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0 and (name != "x" and name != "y"):
-            raise ValueError("{} must be > 0".format(name))
-        if value < 0:
-            raise ValueError("{} must be >= 0".format(name))
 
     @property
     def width(self):
+        """
+        Returns:
+            width
+        """
         return self.__width
 
     @width.setter
     def width(self, width):
-        Rectangle.errors(self, "width", width)
+        """setting width
+
+        args:
+            width: width value
+        """
+        if type(width) is not int:
+            raise TypeError("width must be an integer")
+        if width <= 0:
+            raise ValueError("width must be > 0")
         self.__width = width
 
     @property
     def height(self):
+        """
+        Returns:
+            height
+        """
         return self.__height
 
     @height.setter
     def height(self, height):
-        Rectangle.errors(self, "height", height)
+        """setting height
+
+        args:
+            height: height
+        """
+        if type(height) is not int:
+            raise TypeError("height must be an integer")
+        if height <= 0:
+            raise ValueError("height must be > 0")
         self.__height = height
 
     @property
     def x(self):
+        """
+        Returns:
+            x value
+        """
         return self.__x
 
     @x.setter
     def x(self, x):
-        Rectangle.errors(self, "x", x)
+        """setting x
+        
+        args:
+            x: x value
+        """
+        if type(x) is not int:
+            raise TypeError("x must be an integer")
+        if x < 0:
+            raise ValueError("x must be >= 0")
         self.__x = x
 
     @property
     def y(self):
+        """
+        Returns:
+            y value
+        """
         return self.__y
 
     @y.setter
     def y(self, y):
-        Rectangle.errors(self,"y", y)
+        """setting y
+
+        args:
+            y: y value
+        """
+        if type(y) is not int:
+            raise TypeError("y must be an integer")
+        if y < 0:
+            raise ValueError("y must be >= 0")
         self.__y = y
 
     def area(self):
+        """
+        Returns:
+            rec area
+        """
         return self.width * self.height
 
     def display(self):
+        """printing rec as #
+        """
         for i in range(self.y):
             print()
         for i in range(self.height):
@@ -74,6 +119,12 @@ class Rectangle(Base):
             print()
 
     def update(self, *args, **kwargs):
+        """updating attrs values
+
+        args:
+            args: list of values
+            kwargs: key worded attrs
+        """
         if args:
             for i in range(len(args)):
                 setattr(self, __class__.attrs[i], args[i])
@@ -82,8 +133,17 @@ class Rectangle(Base):
                 setattr(self, key, kwargs[key])
 
     def __str__(self):
+        """
+        Returns:
+            rectangle
+        """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
                 self.id, self.x, self.y, self.width, self.height)
 
     def to_dictionary(self):
-        return self.dict
+        """convert to dictionary
+        """
+        dictionary = {}
+        for attr in self.attrs:
+            dictionary[attr] = getattr(self, attr)
+        return dictionary

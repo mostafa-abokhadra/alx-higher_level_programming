@@ -16,8 +16,8 @@ class Square(Rectangle):
             id: id
         """
         super().__init__(size, size, x, y, id)
-        self.width = width
-        self.height = height
+        self.width = size
+        self.height = size
 
     def __str__(self):
         """getting square
@@ -34,7 +34,7 @@ class Square(Rectangle):
         Returns:
             size
         """
-        return self.__width
+        return self.width
 
     @size.setter
     def size(self, size):
@@ -43,9 +43,8 @@ class Square(Rectangle):
         args:
             size: size
         """
-        super().errors("size", size)
-        self.__width = size
-        self.__height = size
+        self.width = size
+        self.height = size
 
     def update(self, *args, **kwargs):
         """assigns attrs
@@ -58,8 +57,8 @@ class Square(Rectangle):
         if args:
             for i in range(len(args)):
                 if i == 1:
-                    setattr(self, width, args[i])
-                    setattr(self, height, args[i])
+                    setattr(self, 'width', args[i])
+                    setattr(self, 'height', args[i])
                 else:
                     setattr(self, __class__.attrs[i], args[i])
         else:
@@ -67,7 +66,7 @@ class Square(Rectangle):
                 setattr(self, key, kwargs[key])
 
     def to_dictionary(self):
-        """ Returns a dictionary"""
+        """Returns a dictionary"""
         attrs = ['id', 'size', 'x', 'y']
         dicty = {}
         for key in attrs:
