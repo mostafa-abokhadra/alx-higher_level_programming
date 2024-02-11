@@ -1,39 +1,78 @@
 #!/usr/bin/python3
 """square module"""
 from models.rectangle import Rectangle
+"""importing superclass"""
 
 
 class Square(Rectangle):
     """sqaur class that inherits from rectangle"""
-    attrs = ["id", "size", "x", "y"]
     def __init__(self, size, x=0, y=0, id=None):
+        """initializing attrs
+
+        args:
+            size: size of square
+            x: horizontal line
+            y: vertical line
+            id: id
+        """
         super().__init__(size, size, x, y, id)
-        self.size = size
-        self.dict = {"id": self.id, "size": self.size,
-                "x": self.x, "y": self.y}
+        self.width = width
+        self.height = height
 
     def __str__(self):
+        """getting square
+
+        Returns:
+            string
+        """
         return "[Square] ({}) {}/{} - {}".format(
                 self.id, self.x, self.y, self.size)
 
     @property
     def size(self):
-        return self.__size
+        """
+        Returns:
+            size
+        """
+        return self.__width
 
     @size.setter
     def size(self, size):
+        """setting size
+
+        args:
+            size: size
+        """
         super().errors("size", size)
         self.__width = size
         self.__height = size
-        self.__size = size
 
     def update(self, *args, **kwargs):
+        """assigns attrs
+
+        args:
+            args: list of args
+            kwargs: list of keyworded args
+        """
+        attrs = ["id", "size", "x", "y"]
         if args:
             for i in range(len(args)):
-                setattr(self, attrs[i], args[i])
+                if i == 1:
+                    setattr(self, width, args[i])
+                    setattr(self, height, args[i])
+                else:
+                    setattr(self, __class__.attrs[i], args[i])
         else:
             for key in kwargs:
                 setattr(self, key, kwargs[key])
 
     def to_dictionary(self):
-        return self.dict
+        """ Returns a dictionary"""
+        attrs = ['id', 'size', 'x', 'y']
+        dicty = {}
+        for key in attrs:
+            if key == 'size':
+                dicty[key] = getattr(self, 'width')
+            else:
+                dicty[key] = getattr(self, key)
+        return dicty

@@ -22,16 +22,12 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        name = cls.__class__.__name__ + ".json"
-        with open(name, mode='w', encoding="utf-8") as fily:
+        name = cls.__name__ + ".json"
+        with open(name, "w", encoding="utf-8") as fily:
             if list_objs:
-                fily.write("[")
-                for inst in list_objs:
-                    dicty = inst.to_dictionary()
-                    fily.write(cls.to_json_string(dicty))
-                    if inst != list_objs[-1]:
-                        fily.write(", ")
-                fily.write("]")
+                listy = [inst.to_dictionary() for inst in list_objs]
+                json_str = cls.to_json_string(listy)
+                fily.write(json_str)
             else:
                 fily.write("[]")
 

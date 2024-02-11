@@ -76,7 +76,7 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         if args:
             for i in range(len(args)):
-                setattr(self, attrs[i], args[i])
+                setattr(self, __class__.attrs[i], args[i])
         else:
             for key in kwargs:
                 setattr(self, key, kwargs[key])
