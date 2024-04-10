@@ -14,7 +14,7 @@ if (process.argv[2] === undefined || process.argv.length === 3) {
     i = 3;
     secondMaxy = Number(process.argv[3]);
   }
-  for (i ; i < process.argv.length; i++) {
+  for (i; i < process.argv.length; i++) {
     if (Number(process.argv[i]) > secondMaxy && process.argv[i] < maxy) {
       secondMaxy = Number(process.argv[i]);
     }
