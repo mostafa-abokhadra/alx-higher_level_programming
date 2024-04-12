@@ -21,7 +21,13 @@ def connect_sql():
             on cities.state_id = states.id where cities.state_id =\
             (select id from states where name = \'{}\')".format(sys.argv[4]))
     arr = cur.fetchall()
-    print(arr)
+    counter = 0
+    for t in arr:
+        counter = counter + 1
+        print(t[0], end="")
+        if counter != len(arr):
+            print(", ", end="")
+    print()
 
 
 if __name__ == '__main__':
