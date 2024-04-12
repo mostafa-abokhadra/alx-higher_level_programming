@@ -4,8 +4,11 @@
 import sys
 import MySQLdb
 
-connection = MySQLdb.connect
-('localhost', sys.argv[1], sys.argv[2], sys.argv[3])
+try:
+    connection = MySQLdb.connect
+    ('localhost', sys.argv[1], sys.argv[2], sys.argv[3])
+except:
+    print("can't open\n")
 
 curse = connection.cursor()
 curse.execute('select * from states order by states.id')
