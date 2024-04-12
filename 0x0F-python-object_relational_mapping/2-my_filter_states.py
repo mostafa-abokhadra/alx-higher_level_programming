@@ -16,11 +16,11 @@ def connect_sql():
         raise error("can't connect to sql server")
 
     cur = connection.cursor()
-    cur.execute("select * from states")
+    query = "select * from states where name=\'{}\'".format(sys.argv[4])
+    cur.execute(query)
     arr = cur.fetchall()
     for data in arr:
-        if (data[1] == sys.argv[4]):
-            print(data)
+        print(data)
 
 
 if __name__ == '__main__':
