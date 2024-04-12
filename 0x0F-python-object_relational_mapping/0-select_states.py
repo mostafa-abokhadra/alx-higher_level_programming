@@ -16,3 +16,6 @@ arr = curse.fetchall()
 
 for data in arr:
     print(data)
+
+if __name__ == '__main__':
+    MySQLdb.main()
