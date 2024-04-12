@@ -16,7 +16,7 @@ def connect_sql():
         raise error("can't connect to sql server")
 
     cur = connection.cursor()
-    query = "select * from states where name=\'{}\'".format(sys.argv[4])
+    query = "select * from states where binary name=\'{}\'".format(sys.argv[4])
     cur.execute(query)
     arr = cur.fetchall()
     for data in arr:
