@@ -7,6 +7,8 @@ import MySQLdb
 
 
 def connect_sql():
+    """ conncet to sql database
+    """
     flag = 0
     try:
         connect = MySQLdb.connect(
