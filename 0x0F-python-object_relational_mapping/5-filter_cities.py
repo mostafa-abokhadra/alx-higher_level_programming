@@ -17,22 +17,11 @@ def connect_sql():
         raise error("can't connect to sql server")
 
     cur = connect.cursor()
-    cur.execute("select name from states")
+    cur.execute(" select cities.name from cities inner join states\
+            on cities.state_id = states.id where cities.state_id =\
+            (select id from states where name = \'{}\')".format(sys.argv[4]))
     arr = cur.fetchall()
-
-    for t in arr:
-        if t[0] == sys.argv[4]:
-            query = "select cities.name from cities inner join states \
-                    on cities.state_id = (select id from states \
-                    where name={})".format(sys.argv[4])
-            cur.execute(query)
-            arr = cur.fetchall()
-            print(arr)
-            flag = 1
-            break
-
-    if flag:
-        print()
+    print(arr)
 
 
 if __name__ == '__main__':
