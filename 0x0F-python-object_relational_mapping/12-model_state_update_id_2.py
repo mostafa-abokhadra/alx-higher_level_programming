@@ -14,9 +14,11 @@ def alchemy():
     Base.metadata.create_all(bind=engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    obj = session.query(State).filter(State.id == 2)
+    """obj = session.query(State).filter(State.id == 2)
     obj[0].name = 'New Mexico'
-    session.commit()
+    session.commit()"""
+    session.query.filter(State.id == 2).update(
+            {State.name: "New Mexico"}, synchronize_session = False)
 
 
 if __name__ == '__main__':
