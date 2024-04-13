@@ -17,7 +17,7 @@ def alchemy():
     res = session.query(State).filter(State.name.like('%a%')).all()
     for item in res:
         session.delete(item)
-        session.commit()
+    session.commit()
 
 
 if __name__ == "__main__":
