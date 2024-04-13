@@ -5,7 +5,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
-import sys
+from sys import argv
 
 
 def alchemist_connection():
