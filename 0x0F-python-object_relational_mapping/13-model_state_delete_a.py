@@ -14,11 +14,10 @@ def alchemy():
     Base.metadata.create_all(bind=engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    res = session.query(State).all()
+    res = session.query(State).filter(State.name.like('%a%')).all()
     for item in res:
-        if item.name.find('a') != -1:
-            session.delete(item)
-            session.commit()
+        session.delete(item)
+        session.commit()
 
 
 if __name__ == "__main__":
