@@ -19,6 +19,7 @@ def alchemy():
     session.commit()"""
     session.query.filter(State.id == 2).update(
             {State.name: "New Mexico"}, synchronize_session = False)
+    session.commit()
 
 
 if __name__ == '__main__':
