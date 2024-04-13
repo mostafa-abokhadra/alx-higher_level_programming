@@ -15,7 +15,7 @@ def alchemist_connection():
     Base.metadata.create_all(bind=engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    results = session.query(State).all()
+    results = session.query(State).order_by(State.id).all()
 
     for data in results:
         print(data.id, ": ", data.name)
