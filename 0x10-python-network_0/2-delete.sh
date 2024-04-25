@@ -1,3 +1,3 @@
 #!/bin/bash
 # send a delete request
-curl -siX DELETE $1
+curl -si $1 -X DELETE 
