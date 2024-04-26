@@ -2,9 +2,7 @@
 """send, receive and display"""
 
 if __name__ == '__main__':
-    from urllib.request import Request, urlopen
+    from urllib import request
     from sys import argv
-    req = Request(argv[1])
-    with urlopen(req) as response:
-        print(type(response))
-        print(type(response.headers))
+    with request.urlopen(argv[1]) as response:
+        print(dict(response.headers).get("X-Request-Id"))
