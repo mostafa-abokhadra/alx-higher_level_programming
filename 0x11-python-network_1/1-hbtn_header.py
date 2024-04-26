@@ -6,4 +6,5 @@ if __name__ == '__main__':
     from sys import argv
     req = Request(argv[1])
     with urlopen(req) as response:
-        response.getheader('X-Request-Id')
+        print(type(response))
+        print(type(response.headers))
