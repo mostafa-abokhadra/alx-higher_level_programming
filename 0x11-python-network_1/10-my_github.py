@@ -6,7 +6,6 @@ if __name__ == '__main__':
     from sys import argv
     from requests.auth import HTTPBasicAuth
     url = "https://api.github.com/user"
-    token = "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"
     res = requests.get(
             url,
             headers = {"Accept": "application/vnd.github+json",
