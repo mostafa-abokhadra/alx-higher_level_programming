@@ -8,6 +8,7 @@ if __name__ == '__main__':
     letter = "" if len(argv) == 1 else argv[1]
     datum = {"q": letter}
 
+    dic = datum
     res = requests.post("http://0.0.0.0:5000/search_user", data=dic)
     try:
         dic = res.json()
