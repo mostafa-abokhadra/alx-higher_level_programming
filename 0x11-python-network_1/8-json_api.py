@@ -16,10 +16,11 @@ if __name__ == '__main__':
         """if dic == {}:
             print("No result")
         else:
-            print("[{}] {}".format(dic.get("id"), dic.get("name")))"""
+            print("[{}] {}".format(dic.get("id"), dic.get("name")))
+        """
         if len(dic) == 0:
             print("No result")
         else:
             print("[{}] {}".format(dic.get("id"), dic.get("name")))
-    except ValueError:
+    except Exception:
         print("Not a valid JSON")
