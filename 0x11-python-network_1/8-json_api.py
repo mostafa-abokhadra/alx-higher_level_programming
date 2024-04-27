@@ -16,7 +16,7 @@ if __name__ == '__main__':
         dic = res.json()
         if not len(dic) == 0:
             for key, value in dic.items():
-                print("[{}] {}".format(res.get("id"), res.get("name")))
+                print("[{}] {}".format(dic.get("id"), dic.get("name")))
         else:
             print("No result")
     except Exception as error:
