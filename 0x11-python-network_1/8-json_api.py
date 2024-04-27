@@ -7,7 +7,7 @@ if __name__ == '__main__':
     from sys import argv
     url = "http://0.0.0.0:5000/search_user"
     dic = {}
-    letter = "" if len(argv) == 1 else: argv[1]
+    letter = "" if len(argv) == 1 else argv[1]
     datum = {"q": letter}
     res = requests.post(url, data=dic)
     try:
