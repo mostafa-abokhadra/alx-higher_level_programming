@@ -11,7 +11,6 @@ if __name__ == '__main__':
             headers = {"Accept": "application/vnd.github+json",
                 "Authorization": "Bearer {}".format(argv[2]),
                 "X-GitHub-Api-Version": "2022-11-28"},
-            auth = HTTPBasicAuth('mostafa-abokhadra', argv[2]),
             )
     dic = res.json()
     print(dic.get("id"))
