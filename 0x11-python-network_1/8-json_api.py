@@ -12,9 +12,9 @@ if __name__ == '__main__':
     res = requests.post(url, data=dic)
     try:
         dic = res.json()
-        if not len(dic) == 0:
-            print("[{}] {}".format(dic.get("id"), dic.get("name")))
-        else:
+        if dic == {}:
             print("No result")
-    except Exception as error:
+        else:
+            print("[{}] {}".format(dic.get("id"), dic.get("name")))
+    except Exception:
         print("Not a valid JSON")
