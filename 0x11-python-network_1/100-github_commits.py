@@ -7,7 +7,7 @@ if __name__ == '__main__':
     from sys import argv
     from requests.auth import HTTPBasicAuth
 
-    res = requests.get("https://api.github.com/repos/{}/{}/commits".format(argv[2], argv[1]))
+    res = requests.get("https://api.github.com/repos/{}/{}/commits".format(argv[1], argv[2]))
     commits = res.json()
     for i in range(10):
         print("{}: {}".format(
