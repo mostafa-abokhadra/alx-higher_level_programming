@@ -5,11 +5,12 @@
 if __name__ == '__main__':
     import requests
     from sys import argv
+    url = "http://0.0.0.0:5000/search_user"
     letter = "" if len(argv) == 1 else argv[1]
     datum = {"q": letter}
 
     dic = datum
-    res = requests.post("http://0.0.0.0:5000/search_user", data=dic)
+    res = requests.post(url, data=dic)
     try:
         dic = res.json()
         """if dic == {}:
