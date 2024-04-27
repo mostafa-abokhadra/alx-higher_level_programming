@@ -2,14 +2,17 @@
 """listing commits"""
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
+    import sys
     import requests
-    from sys import argv
-    from requests.auth import HTTPBasicAuth
-
-    res = requests.get("https://api.github.com/repos/{}/{}/commits".format(argv[1], argv[2]))
+    url = "https://api.github.com/repos/{}/{}/commits".format(
+        sys.argv[2], sys.argv[1])
+    res = requests.get(url)
     commits = res.json()
-    for i in range(10):
-        print("{}: {}".format(
-            commits[i].get("sha"),
-            commits[i].get("commit").get("author").get("name")))
+    try:
+        for i in range(10):
+            print("{}: {}".format(
+                commits[i].get("sha"),
+                commits[i].get("commit").get("author").get("name")))
+    except Exception:
+        pass
