@@ -16,6 +16,6 @@ request(process.argv[2] + '/18', (error, response, body) => {
   if (error) {
     console.log(error);
   } else {
-    console.log(JSON.parse(body).films.length);
+    console.log(JSON.parse(body));
   }
 });
