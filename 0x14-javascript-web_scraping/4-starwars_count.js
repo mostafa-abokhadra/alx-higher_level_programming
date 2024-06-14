@@ -2,22 +2,29 @@
 // no of movies actress is present
 
 const request = require('request');
-let str = '';
-for (let i = process.argv[2].length; i >= 0; i--) {
-  if (process.argv[2][i] === '/') {
-    for (let j = 0; j < i; j++) {
-      str = str + process.argv[2][j];
+
+let count = 0;
+request(process.argv[2], (err, res, body) => {
+  if (err) {
+    console.log(err);
+    return;
+  }
+  const myjson = JSON.parse(body);
+  for (let i = 0; i < myjson.results.length; i++) {
+    const characters = myjson.results[i].characters;
+    for (let j = 0; j < characters.length; j++) {
+      let str = '';
+      for (let k = characters[j].length - 2; k >= 0; k--) {
+        if (characters[j][k] === '/') {
+          break;
+        }
+        str += characters[j][k];
+      }
+      str = str.split('').reverse().join('');
+      if (Number(str) === 18) {
+        count += 1;
+      }
     }
-    str += '/people/18';
-    break;
   }
-}
-request(process.argv[2] , (error, response, body) => {
-  if (error) {
-    console.log(error);
-  } else {
-    request(JSON.parse(body).results[0].characters[15], (error, response, body) => {
-      console.log(JSON.parse(body).films.length)
-    });
-  }
+  console.log(count);
 });
