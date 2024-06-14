@@ -12,7 +12,7 @@ for (let i = process.argv[2].length; i >= 0; i--) {
     break;
   }
 }
-request(str, (error, response, body) => {
+request(process.argv[2] + '/18', (error, response, body) => {
   if (error) {
     console.log(error);
   } else {
