@@ -12,10 +12,12 @@ for (let i = process.argv[2].length; i >= 0; i--) {
     break;
   }
 }
-request(process.argv[2] + '/18', (error, response, body) => {
+request(process.argv[2] , (error, response, body) => {
   if (error) {
     console.log(error);
   } else {
-    console.log(JSON.parse(body));
+    request(JSON.parse(body).results[0].characters[15], (error, response, body) => {
+      console.log(JSON.parse(body).films.length)
+    });
   }
 });
